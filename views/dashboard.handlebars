@@ -1,0 +1,100 @@
+<div class="card my-5 mx-5 mt-5">
+<header class="card-header">
+    <p class="card-header-title is-size-2">
+    Create New Post
+    </p>
+</header>
+<div class="card-content">
+    <div class="content">
+    <div class="field py-2">
+        <label class="label">Title</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="Blog post title">
+        </div>
+    </div>
+    <div class="field">
+        <label class="label">Content</label>
+        <div class="control">
+            <input class="textarea" type="text" placeholder="Blog post content">
+        </div>
+    </div>
+    <div class="field is-grouped">
+        <div class="control">
+            <button class="button is-link">Create</button>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+
+<section class="section has-background-grey py-2">
+<div class="control">
+    <button class="button is-link">+ New Post</button>
+</div>
+</section>
+
+
+
+<div class="card my-5 mx-5 mt-5">
+<header class="card-header">
+    <p class="card-header-title is-size-2">
+    Edit Post
+    </p>
+</header>
+<div class="card-content">
+    <div class="content">
+    <div class="field py-2">
+        <label class="label">Title</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="Blog post title">
+        </div>
+    </div>
+    <div class="field">
+        <label class="label">Content</label>
+        <div class="control">
+            <input class="textarea" type="text" placeholder="Blog post content">
+        </div>
+    </div>
+    <div class="field is-grouped">
+        <div class="control">
+            <button class="button is-link">Update Post</button>
+        </div>
+        <div class="control">
+            <button class="button is-link">Delete</button>
+            </div>
+    </div>
+    </div>
+</div>
+</div>
+
+
+{{#if blogs.length}}
+    <div class="card my-5 mx-5 mt-5">
+
+    {{#each blogs as |blog|}}
+        <header class="card-header">
+          <p class="card-header-title is-size-2">
+              <a href="/blog/{{blog.id}}">{{blog.title}}</a>
+          </p>
+          <p class="subtitle is-size-5 has-text-centered">Posted by {{user.name}} on {{blog.date_created}}</p>
+          <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
+            <br>
+          </div>
+    {{/each}}
+    </div>
+  {{/if}}
+</div>
+
+
+<section class="section has-background-grey py-1"></section>
+
+<script src="./Tech-Mindshare/public/js/script.js"></script>
+<script src="./js/dashboard.js"></script>
