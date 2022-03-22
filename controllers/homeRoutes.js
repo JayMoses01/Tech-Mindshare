@@ -9,10 +9,12 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['title'],
+          attributes: ['name'],
         },
       ],
     });
+
+    //res.status(200).json(blogData);
 
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
@@ -31,10 +33,12 @@ router.get('/blog/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['title'],
+          attributes: ['name'],
         },
       ],
     });
+
+    //res.status(200).json(blogData);
 
     const blog = blogData.get({ plain: true });
 
@@ -55,6 +59,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
       attributes: { exclude: ['password'] },
       include: [{ model: Blog }],
     });
+
+    //res.status(200).json(userData);
 
     const user = userData.get({ plain: true });
 

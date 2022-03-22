@@ -25,38 +25,49 @@
         <!--Nav bar-->
         <div class="navbar-menu" id="nav-links">
             <div class="navbar-end">
-                <a class="navbar-item has-text-black has-text-weight-bold" href="#about-me">
+                <a class="navbar-item has-text-black has-text-weight-bold" href="/main">
                     Home
                 </a>
-                <a class="navbar-item has-text-black has-text-weight-bold" href="#work">
+                {{#if logged_in}}
+                <a class="navbar-item has-text-black has-text-weight-bold" href="/dashboard">
                     Dashboard
                 </a>
+                {{else}}
                 <!--Should not show login if logged in.-->
-                <a class="navbar-item has-text-black has-text-weight-bold" href="#contact-me">
+                <a class="navbar-item has-text-black has-text-weight-bold" href="/login">
                     Login
                 </a>
+                {{/if}}
                 <!--Should not show logout if not logged in.-->
-                <a class="navbar-item has-text-black has-text-weight-bold" href="./assets/JayMoses_Resume.docx">
+                <a class="navbar-item has-text-black has-text-weight-bold" href="/logout">
                     Logout
                 </a>
             </div>
         </div>
     </nav>
-        
+
+
+<main>
+    {{{body}}}
+</main>
+
+<footer>
+
+</footer>
 
 
 
 
+<section class="section has-background-grey py-1"></section>
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
-  <script src="/js/logout.js"></script>
+  <script src="../../public/js/logout.js"></script>
   {{/if}}
 
+<script src="./Tech-Mindshare/public/js/script.js"></script>
 
-    <section class="section has-background-grey py-1"></section>
-
-    <script src="./Tech-Mindshare/public/js/script.js"></script>
 
 </body>
+
 </html>
