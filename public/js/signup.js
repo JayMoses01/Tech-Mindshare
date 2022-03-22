@@ -9,7 +9,7 @@ const signupUser = async (event) => {
     if (name && password) {
       const response = await fetch('/api/users', {
         method: 'POST',
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ name, password }),
         headers: { 'Content-Type': 'application/json' },
       });
   
@@ -23,7 +23,5 @@ const signupUser = async (event) => {
   };
 
 // JRM: Event listener for the signup button.
-document
-    .getElementById('signup-button')
-    .addEventListener('submit', signupUser);
-  
+document.getElementById('signup-button');
+document.addEventListener('submit', signupUser);
