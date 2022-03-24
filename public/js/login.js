@@ -8,7 +8,7 @@ const loginUser = async (event) => {
     // JRM: If there are email and password values in the respective input fields, a POST request is sent with this information.
     if (name && password) {
 
-      const response = await fetch('/api/users', {
+      const response = await fetch('/api/users/login', {
         method: 'POST',
         body: JSON.stringify({ name, password }),
         headers: { 'Content-Type': 'application/json' },
@@ -24,6 +24,6 @@ const loginUser = async (event) => {
   };
   
 
-// JRM: Event listener for the login button. (FIND AN ACTIVITY WHERE BUTTON CLICKING ACTUALLY DOES SOMETHING--NOT THE MINI PROJECT. I COULD TRY CHANGING IT BACK TO QUERY SELECTOR.)
+// JRM: Event listener for the login button.
 const loginBtn = document.getElementById('login-button');
-loginBtn.addEventListener('submit', loginUser);
+loginBtn.addEventListener('click', loginUser);

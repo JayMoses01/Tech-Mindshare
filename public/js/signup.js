@@ -7,7 +7,7 @@ const signupUser = async (event) => {
   
     // JRM: If values are present for the name, email, and password fields, a POST request is sent to save these credentials.
     if (name && password) {
-      const response = await fetch('/api/users', {
+      const response = await fetch('/api/users/signup', {
         method: 'POST',
         body: JSON.stringify({ name, password }),
         headers: { 'Content-Type': 'application/json' },
@@ -23,5 +23,5 @@ const signupUser = async (event) => {
   };
 
 // JRM: Event listener for the signup button.
-document.getElementById('signup-button');
-document.addEventListener('submit', signupUser);
+const signupBtn = document.getElementById('signup-button');
+signupBtn.addEventListener('submit', signupUser);
