@@ -32,16 +32,14 @@
                 <a class="navbar-item has-text-black has-text-weight-bold" href="/dashboard">
                     Dashboard
                 </a>
+                <a class="navbar-item has-text-black has-text-weight-bold" id="logout-button">
+                    Logout
+                </a>
                 {{else}}
-                <!--Should not show login if logged in.-->
                 <a class="navbar-item has-text-black has-text-weight-bold" href="/login">
                     Login
                 </a>
                 {{/if}}
-                <!--Should not show logout if not logged in.-->
-                <a class="navbar-item has-text-black has-text-weight-bold" href="/logout" id="logout-button">
-                    Logout
-                </a>
             </div>
         </div>
     </nav>

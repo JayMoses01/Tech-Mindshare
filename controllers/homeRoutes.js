@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const { format } = require('path');
+
 const { Blog, User } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -9,7 +11,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
@@ -33,7 +35,7 @@ router.get('/blog/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
@@ -76,7 +78,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
 
   if (req.session.logged_in) {
-    res.redirect('/dashboard');
+    res.redirect('/');
     return;
   }
 
@@ -84,7 +86,13 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
+  if (req.session.logged_in) {
+      res.redirect('/');
+      return;
+  }
+
   res.render('signup');
 });
+
 
 module.exports = router;
