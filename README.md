@@ -39,13 +39,6 @@ This is a site for users who would like to write and post blogs about tech-relat
 ![image](./public/assets/05-dashboard.png)
 
 
-## Application walkthrough video demo
-
-A video demonstrating the functionality of this application can be found at the URL below.
-
-URL of walkthrough video demo: https://drive.google.com/file/d/1AyOMqsmuYQW7FD5abH8GOHpN7rebVVki/view?usp=sharing
-
-
 ## Technologies used
 
 This application utilizes these technologies:
